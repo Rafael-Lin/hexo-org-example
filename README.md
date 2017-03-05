@@ -5,4 +5,4 @@ Example blog for how to use [hexo](https://hexo.io) with [org-mode](https://orgm
 
 This site is example for [coldnew/hexo-renderer-org](https://github.com/coldnew/hexo-renderer-org), which help [hexo](https://hexo.io/) can render org-mode properly.
 
-For more information, please see [**DEMO Site**](https://coldnew.github.io/hexo-org-example).
+For more information, please see [**Getting Started with the Hexo and org-mode**](https://coldnew.github.io/hexo-org-example/2017/03/05/getting-started-with-hexo-and-org-mode/).
