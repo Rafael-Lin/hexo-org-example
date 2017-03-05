@@ -1,0 +1,291 @@
+#+TITLE: Getting Started with the Hexo and org-mode
+#+DATE: <2017-03-05 Sun 09:58>
+#+OPTIONS: num:nil toc:nil
+#+TAGS: hexo, org-mode
+#+CATEGORY: Tutorials
+
+#+LINK: emacs     https://www.gnu.org/s/emacs
+#+LINK: hexo      https://hexo.io/
+#+LINK: org-mode  https://orgmode.org
+#+LINK: markdown https://en.wikipedia.org/wiki/Markdown
+
+New to blogging with the [[https://hexo.io/][Hexo framework]] and [[https://orgmode.org][org-mode]]? This tutorial will walk you through installing Hexo, running a local server, and creating your first blog post with [[https://orgmode.org][org-mode]].
+
+#+HTML: <div class="bs-callout bs-callout-info">
+*Disclaimer*
+
+This post is based on [[https://www.cgmartin.com/2016/01/03/getting-started-with-hexo-blog/][Getting Started with the Hexo Blogging Framework]] by [[https://github.com/cgmartin][Christopher martin]], which is a really nice post to getting start with [[hexo][Hexo Framrwork]].
+#+HTML: </div>
+
+* Installing the Hexo CLI
+
+  #+HTML: <div class="bs-callout bs-callout-warning">
+  *Requirements*
+
+  You'll need [[https://docs.npmjs.com/getting-started/installing-node][Node.js]] and [[https://git-scm.com/book/en/v2/Getting-Started-Installing-Git][Git]] installed as pre-requisites.
+  #+HTML: </div>
+
+  Install the Hexo command line interface (CLI) globally with the Node.js package manager (NPM):
+
+  : npm install -g hexo-cli
+
+  ...once installed, use the =hexo init= command to create a new blog project:
+
+  #+BEGIN_SRC sh
+    hexo init my-blog && cd my-blog
+  #+END_SRC
+
+  This step can take a few minutes while it creates an [[https://hexo.io/docs/setup.html][initial file structure for your site]] and downloads other Node.js dependencies.
+
+*  Installing the hexo-renderer-org
+
+  Since we want to integrated [[hexo][hexo]] with [[org-mode][org-mode]], we need to install renderer plugin to make [[hexo][hexo]] can recognize the [[org-mode][org-mode]] file. Currently, there's two main org-mode renderer for hexo:
+
+  - [[https://github.com/CodeFalling/hexo-renderer-org][CodeFalling/hexo-renderer-org]]
+  - [[https://github.com/coldnew/hexo-renderer-org][coldnew/hexo-renderer-org]] (/fork/)
+
+  This site is demo project for [[https://github.com/coldnew/hexo-renderer-org][coldnew/hexo-renderer-org]] so we'll use his fork instead. Install the renderer is really simple, just type:
+
+  : npm install https://github.com/coldnew/hexo-renderer-org#coldnew --save
+
+  then npm will save information to =package.json=.
+
+  Now we need to modify the =_config.yml= to add some config for [[https://github.com/coldnew/hexo-renderer-org][coldnew/hexo-renderer-org]], you should add following contents:
+
+  #+BEGIN_SRC diff
+    diff --git a/_config.yml b/_config.yml
+    index 26c27e9..baad490 100644
+    --- a/_config.yml
+    +++ b/_config.yml
+    @@ -38,7 +38,7 @@ post_asset_folder: false
+     relative_link: false
+     future: true
+     highlight:
+    -  enable: true
+    +  enable: false
+       line_number: true
+       auto_detect: false
+       tab_replace:
+    @@ -69,3 +69,10 @@ theme: landscape
+     ## Docs: https://hexo.io/docs/deployment.html
+     deploy:
+       type:
+    +
+    +# hexo-renderer-org
+    +## Docs: https://github.com/coldnew/hexo-render-org
+    +org:
+    +  # emacs: /Applications/Emacs.app/Contents/MacOS/Emacs
+    +  cachedir: ./hexo-org-cache/
+    +  theme: tango-dark
+  #+END_SRC
+
+  Here we disable [[https://highlightjs.org/][highlight.js]] feature since [[https://github.com/coldnew/hexo-renderer-org][coldnew/hexo-renderer-org]] can use [[emacs][emacs]] syntax highlight your source code blocks. We also need to let  [[https://github.com/coldnew/hexo-renderer-org][coldnew/hexo-renderer-org]] know where to find your emacs if it's not in your system path.
+
+  The =cachedir= is for [[https://github.com/coldnew/hexo-renderer-org][coldnew/hexo-renderer-org]] to store the cache files, this will speedup the render process. You also can setup the emacs theme you want to use if it's build-in in emacs.
+
+* Starting the serer
+
+  To view your newly created site in a browser, start the local server:
+
+  #+BEGIN_SRC sh
+    hexo server --draft --open
+
+    INFO  Hexo is running at http://localhost:4000/hexo-org-example/. Press Ctrl+C to stop.
+  #+END_SRC
+
+  #+HTML: <div class="bs-callout bs-callout-danger">
+  *Didn't work?*
+
+  Your current working directory must be in the =my-blog= project folder, or the server will not start.
+  #+HTML: </div>
+
+  This starts the server with a few extra options:
+
+  - =--draft=: Enable viwable /draft/ posts (by default, drafts are hidden)
+  - =--open=: Open the local site in your browser
+
+  A browser should pop up and display the default blog site with a canned "Hello World" post.
+
+  You'll want to leave the server running in the terminal while authoring.The server process will watch for changes made to the [[org-mode][org-mode]] source files and automatically generate new HTML files.The server's console log output is also helpful for troubleshooting errors that you may run across.
+
+  #+HTML: <div class="bs-callout bs-callout-warning">
+  *Heads up*
+
+  Be aware the some actions require a restart of the server:
+
+    - Editing the project's =_config.yml=
+    - Installing or updating Hexo plugins with =npm=
+    - Making changes to local plugins within the =scripts= folder(s)
+
+  Since most of the authoring time is spent within the org-mode files, a hard restart isn't require too often.
+  #+HTML: </div>
+
+* Creating your first post
+
+  Since [[hexo][hexo]] doesn't support [[org-mode][org-mode]] officially, we start our first post on our own. Unlike [[markdown][Markdown]] which doesn't has a standard, a [[org-mode][org-mode]] post is just like other [[org-mode][org-mode]] post you write before, let's create a file named =My-First-Blog-Post.org= in =./source/_drafts/My-First-Blog-Post.org= and open the file with your favorite editor.
+
+  #+BEGIN_SRC sh
+    emacs ./source/_drafts/My-First-Blog-Post.org
+    # open and create ./source/_drafts/My-First-Blog-Post.org
+  #+END_SRC
+
+  Lets add some texts in our new post
+
+  #+BEGIN_SRC org
+    ,#+TITLE: My First Blog Post
+    ,#+TAGS: org-mode, hexo
+
+    This is some content.
+
+    ,* Hello there
+
+      This is other content.
+
+      ,#+BEGIN_SRC sh
+        # Test emacs's syntax highlight
+        echo "Hello hexo-renderer-org"
+      ,#+END_SRC
+  #+END_SRC
+
+  Saving changes to your [[org-mode][org-mode]] files will be automatically detected by the running =hexo server= and regenerated as static HTML files, *but you must refresh the browser to view the changes.*
+
+  #+HTML: <div class="bs-callout bs-callout-danger">
+  *Content not updated?*
+
+  Due to some limitation, [[https://github.com/coldnew/hexo-renderer-org][coldnew/hexo-renderer-org]] may take more time (about 3 ~ 6 sec) to renderer your org-mode files, just be patient.
+  #+HTML: </div>
+
+  Your post should look something like this is browser:
+
+  #+ATTR_HTML: :alt Screenshot of First Blog Post
+  [[file:getting-started-with-hexo-and-org-mode/first-post.png]]
+
+  If you dislike having to manually refresh the browser each time, the [[https://www.npmjs.com/package/hexo-livereload][hexo-livereload]] or [[https://www.npmjs.com/package/hexo-browsersync][hexo-browsersync]] plugins can do it automatically.
+
+  To install the =hexo-browsersync= plugin (my personal favorite):
+
+  #+BEGIN_SRC sh
+    npm install hexo-browsersync --save
+    hexo server --draft --open # restart the server
+  #+END_SRC
+
+  #+HTML: <div class="bs-callout bs-callout-info">
+  *Tip*
+
+  Other [[https://hexo.io/plugins/][Hexo plugins]] can be easily installed in this same way, useing =npm=.
+
+  Many plugins will have configuration that can be tweaked form within the project's =_config.yml= file. You'll need to consult each plugin's documentation for their specific configuration properties.
+
+  In the case of =hexo-browsersync=, the defaults work fine and don't requre editiog the =_config.yml= file.
+  #+HTML: </div>
+
+* Displaying summary excerpts in listings
+
+  Say you have a lenghty post and don't like the fact that the entire article is displayed in the listing pages...
+
+  You can mark a spot in your [[org-mode][org-mode]] file with =#+HTML: <!-- more -->= to hide it from the listing pages. It will be replaced with a /"Read more"/ link that will open the rest of the article content.
+
+  #+BEGIN_SRC org
+    ,#+TITLE: My First Blog Post
+    ,#+TAGS: org-mode, hexo
+
+    This is a summary of the post.
+
+    ,#+HTML: <!-- more -->
+
+    This is some content.
+
+    ,* Hello there
+
+      This is other content.
+
+      ,#+BEGIN_SRC sh
+        # Test emacs's syntax highlight
+        echo "Hello hexo-renderer-org"
+      ,#+END_SRC
+  #+END_SRC
+
+* Inserting images
+
+  Images and other asset files can be placed in subdirectories under the =./sources/= folder. Use this [[https://upload.wikimedia.org/wikipedia/en/9/93/Ateam.jpg][picture of the original A-Team]] from Wikipedia as a test. Download it and save it to this path:
+
+  : ./source/images/Ateam.jpg
+
+  Edit your original post, inserting a markdown image link with a reference to =/images/Ateam.jpg=:
+
+  #+BEGIN_SRC org
+    ,#+TITLE: My First Blog Post
+    ,#+TAGS: org-mode, hexo
+
+    This is some content.
+
+    [[file:/images/Ateam.jpg]]
+  #+END_SRC
+
+  However, this is not the [[org-mode][org-mode]] way to insert image, in [[org-mode]] way, we can use =M-x org-toggle-inline-image= to show the image in our emacs (GUI).
+
+  To make assets be organized in *folders for each posts*. It requires enabling the =post_asset_folder: true= setting in =_config.yml=.
+
+  #+BEGIN_SRC yaml
+    post_asset_folder: true
+  #+END_SRC
+
+  After enable this feature, let's create a asset directory with the same name as our post:
+
+  #+BEGIN_SRC sh
+    mkdir -p source/_posts/My-First-Blog-Post
+    wget https://upload.wikimedia.org/wikipedia/en/9/93/Ateam.jpg -O source/_posts/My-First-Blog-Post/Ateam.jpg
+  #+END_SRC
+
+  then, edit our [[org-mode][org-mode]] file, you can use =C-c i= to insert file you want;
+
+  #+BEGIN_SRC org
+    ,#+TITLE: My First Blog Post
+    ,#+TAGS: org-mode, hexo
+
+    This is some content.
+
+    [[file:My-First-Blog-Post/Ateam.jpg]]
+  #+END_SRC
+
+  Now you should see something like this in the browser:
+
+  [[file:getting-started-with-hexo-and-org-mode/add_image.png]]
+
+* Publishing drafts
+
+  When it's time to move the draft to a "live" post for the world to see, we just need move file in =sources/_drafts= folder to =sources/_posts= folder then add timestamp.
+
+  #+BEGIN_SRC sh
+    # Move org-mode file
+    mv sources/_drafts/My-First-Blog-Post.org  sources/_posts
+    # Move assets
+    mv sources/_drafts/My-First-Blog-Post      sources/_posts
+  #+END_SRC
+
+  Now, edit the =sources/_posts/My-First-Blog-Post.org=, add [[http://orgmode.org/guide/Export-options.html][Export-options]] =#+DATE:= to your post, you can use =C-u C-c .= add timestamp.
+
+  Your posts should look like this:
+
+  #+BEGIN_SRC org
+    ,#+TITLE: My First Blog Post
+    ,#+DATE: <2017-03-05 Sun 11:45>
+    ,#+TAGS: org-mode, hexo
+
+    This is some content.
+
+    [[file:My-First-Blog-Post/Ateam.jpg]]
+  #+END_SRC
+
+  Finally, prepare the entire site for deployment. Run the =hexo generate= command:
+
+  #+BEGIN_SRC sh
+    hexo generate
+    # generates -> ./public/
+  #+END_SRC
+
+  Everything that is required to run the website will be placed inside the =./public= folder. You are all set to take this folder and transfer it to your public webserver or CDN.
+
+* Next steps
+
+  For next steps, please refer to orginal post: [[https://www.cgmartin.com/2016/01/03/getting-started-with-hexo-blog/][Getting Started with the Hexo Blogging Framework]].
