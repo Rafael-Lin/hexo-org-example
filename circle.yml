@@ -17,7 +17,7 @@ dependencies:
     - sudo update-alternatives --set emacs /usr/bin/emacs-snapshot
     - npm install
     - git submodule init
-    - git submodule update --recursive --remote
+    - git submodule update
   cache_directories:
     - node_modules
     - hexo-org-cache
