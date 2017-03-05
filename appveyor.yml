@@ -11,3 +11,5 @@ install:
 build_script:
   - hexo clean
   - hexo generate --debug
+  - ls -l hexo-org-cache
+  - ls -l public
