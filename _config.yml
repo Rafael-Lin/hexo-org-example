@@ -3,12 +3,14 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: hexo-org-example
 subtitle:
 description:
-author: John Doe
+author: Yen-Chin, lee
 language:
-timezone:
+  - zh-tw
+  - en
+timezone: Asia/Taipei
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -16,6 +18,7 @@ url: https://coldnew.github.io/hexo-org-example
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
+  lang:zh_TW
 
 # Directory
 source_dir: source
