@@ -79,4 +79,4 @@ org:
   # emacs: /Applications/Emacs.app/Contents/MacOS/Emacs
   cachedir: ./hexo-org-cache/
   theme: tango-dark
-  debug: false  # enable to show some debug message
+  debug: true  # enable to show some debug message
