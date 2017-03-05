@@ -1,4 +1,5 @@
 # hexo-org-example
+[![CircleCI](https://circleci.com/gh/coldnew/hexo-org-example.svg?style=svg)](https://circleci.com/gh/coldnew/hexo-org-example)
 
 Example blog for how to use [hexo](https://hexo.io) with [org-mode](https://orgmode.org).
 
