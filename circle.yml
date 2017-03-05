@@ -19,6 +19,7 @@ dependencies:
     - git submodule update --recursive --remote
   cache_directories:
     - node_modules
+    - hexo-org-cache
 
 test:
   override:
