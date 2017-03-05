@@ -1,0 +1,37 @@
+#+TITLE: Hello World
+
+Welcome to [[https://hexo.io/][Hexo]]! This is your vary first post. Check [[https://hexo.io/docs/][documentation]] for mote info. If you at any problems when using Hexo, you can find the answer in [[https://hexo.io/docs/troubleshooting.html][troubleshooting]] or you can ask me on [[https://github.com/hexojs/hexo/issues][GitHub]].
+
+* Quick Start
+
+** Create a new post
+
+   #+BEGIN_SRC sh
+     hexo new "My New Post"
+   #+END_SRC
+
+   More info: [[https://hexo.io/docs/writing.html][Writing]]
+
+** Run server
+
+   #+BEGIN_SRC sh
+     hexo server
+   #+END_SRC
+
+   More info: [[https://hexo.io/docs/server.html][Server]]
+
+** Generate static files
+
+   #+BEGIN_SRC sh
+     hexo generate
+   #+END_SRC
+
+   More info: [[https://hexo.io/docs/generating.html][Generating]]
+
+** Deploy to remote sites
+
+   #+BEGIN_SRC sh
+     hexo deploy
+   #+END_SRC
+
+   More info: [[https://hexo.io/docs/deployment.html][Deployment]]
