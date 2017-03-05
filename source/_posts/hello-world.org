@@ -1,5 +1,6 @@
 #+TITLE: Hello World
 #+DATE: <2017-03-05 Sun 08:52>
+#+TAGS: hexo, org-mode
 
 Welcome to [[https://hexo.io/][Hexo]]! This is your vary first post. Check [[https://hexo.io/docs/][documentation]] for mote info. If you at any problems when using Hexo, you can find the answer in [[https://hexo.io/docs/troubleshooting.html][troubleshooting]] or you can ask me on [[https://github.com/hexojs/hexo/issues][GitHub]].
 
