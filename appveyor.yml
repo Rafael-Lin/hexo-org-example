@@ -5,6 +5,7 @@ install:
   - npm --version
   - npm install
   - npm install hexo-cli -g
+  - cinst emacs
 
 build_script:
   - hexo clean
