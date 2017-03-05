@@ -14,7 +14,7 @@ New to blogging with the [[https://hexo.io/][Hexo framework]] and [[https://orgm
 #+HTML: <div class="bs-callout bs-callout-info">
 *Disclaimer*
 
-This post is based on [[https://www.cgmartin.com/2016/01/03/getting-started-with-hexo-blog/][Getting Started with the Hexo Blogging Framework]] by [[https://github.com/cgmartin][Christopher martin]], which is a really nice post to getting start with [[hexo][Hexo Framrwork]].
+This post is based on [[https://www.cgmartin.com/2016/01/03/getting-started-with-hexo-blog/][Getting Started with the Hexo Blogging Framework]] by [[https://github.com/cgmartin][Christopher Martin]], which is a really nice post to getting start with [[hexo][Hexo Framrwork]].
 #+HTML: </div>
 
 * Installing the Hexo CLI
