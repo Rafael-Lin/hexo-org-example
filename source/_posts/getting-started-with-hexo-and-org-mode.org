@@ -83,7 +83,7 @@ This post is based on [[https://www.cgmartin.com/2016/01/03/getting-started-with
 
   The =cachedir= is for [[https://github.com/coldnew/hexo-renderer-org][coldnew/hexo-renderer-org]] to store the cache files, this will speedup the render process. You also can setup the emacs theme you want to use if it's build-in in emacs.
 
-* Starting the serer
+* Starting the server
 
   To view your newly created site in a browser, start the local server:
 
