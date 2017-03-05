@@ -289,3 +289,5 @@ This post is based on [[https://www.cgmartin.com/2016/01/03/getting-started-with
 * Next steps
 
   For next steps, please refer to orginal post: [[https://www.cgmartin.com/2016/01/03/getting-started-with-hexo-blog/][Getting Started with the Hexo Blogging Framework]].
+
+  If you has any question, feel free to submit [[https://github.com/coldnew/hexo-renderer-org/issues][issue]].
