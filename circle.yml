@@ -28,6 +28,5 @@ deployment:
   publish:
     branch: master
     commands:
-      - make
       - sed -i 's%https://${GH_TOKEN}@${GH_REF}%git@github.com:coldnew/hexo-org-example.git%g' deploy.sh
       - ./deploy.sh
