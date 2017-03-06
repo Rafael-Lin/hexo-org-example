@@ -39,7 +39,7 @@ This post is based on [[https://www.cgmartin.com/2016/01/03/getting-started-with
 
   This step can take a few minutes while it creates an [[https://hexo.io/docs/setup.html][initial file structure for your site]] and downloads other Node.js dependencies.
 
-*  Installing the hexo-renderer-org
+* Installing the hexo-renderer-org
 
   Since we want to integrated [[hexo][hexo]] with [[org-mode][org-mode]], we need to install renderer plugin to make [[hexo][hexo]] can recognize the [[org-mode][org-mode]] file. Currently, there's two main org-mode renderer for hexo:
 
@@ -76,7 +76,7 @@ This post is based on [[https://www.cgmartin.com/2016/01/03/getting-started-with
     +# hexo-renderer-org
     +## Docs: https://github.com/coldnew/hexo-render-org
     +org:
-    +  # emacs: /Applications/Emacs.app/Contents/MacOS/Emacs
+    +  emacs: /Applications/Emacs.app/Contents/MacOS/Emacs
     +  cachedir: ./hexo-org-cache/
     +  theme: tango-dark
   #+END_SRC
@@ -174,7 +174,7 @@ This post is based on [[https://www.cgmartin.com/2016/01/03/getting-started-with
   #+HTML: <div class="bs-callout bs-callout-info">
   *Tip*
 
-  Other [[https://hexo.io/plugins/][Hexo plugins]] can be easily installed in this same way, useing =npm=.
+  Other [[https://hexo.io/plugins/][Hexo plugins]] can be easily installed in this same way, using =npm=.
 
   Many plugins will have configuration that can be tweaked form within the project's =_config.yml= file. You'll need to consult each plugin's documentation for their specific configuration properties.
 
@@ -185,7 +185,7 @@ This post is based on [[https://www.cgmartin.com/2016/01/03/getting-started-with
 
   Say you have a lenghty post and don't like the fact that the entire article is displayed in the listing pages...
 
-  You can mark a spot in your [[org-mode][org-mode]] file with =#+HTML: <!-- more -->= to hide it from the listing pages. It will be replaced with a /"Read more"/ link that will open the rest of the article content.
+  You can mark a spot in your [[org-mode][org-mode]] file with =#+HTML: <!-- more -->= to hide it from the listing pages. It will be replaced with a "Read more" link that will open the rest of the article content.
 
   #+BEGIN_SRC org
     ,#+TITLE: My First Blog Post
