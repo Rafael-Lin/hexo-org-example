@@ -80,3 +80,6 @@ org:
   cachedir: ./hexo-org-cache/
   theme: tango-dark
   debug: true  # enable to show some debug message
+  common: |
+    #+OPTIONS: html-postamble:nil
+  user_config: ./source/_emacs/init.el
