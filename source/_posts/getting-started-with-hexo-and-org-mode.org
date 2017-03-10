@@ -1,5 +1,6 @@
 #+TITLE: Getting Started with the Hexo and org-mode
 #+DATE: <2017-03-05 Sun 09:58>
+#+UPDATED: <2017-03-11 Sat 00:30>
 #+OPTIONS: num:nil toc:nil
 #+TAGS: hexo, org-mode
 #+CATEGORY: Tutorials
@@ -54,36 +55,27 @@ This post is based on [[https://www.cgmartin.com/2016/01/03/getting-started-with
 
   Now we need to modify the =_config.yml= to add some config for [[https://github.com/coldnew/hexo-renderer-org][coldnew/hexo-renderer-org]], you should add following contents:
 
-  #+BEGIN_SRC diff
-    diff --git a/_config.yml b/_config.yml
-    index 26c27e9..baad490 100644
-    --- a/_config.yml
-    +++ b/_config.yml
-    @@ -38,7 +38,7 @@ post_asset_folder: false
-     relative_link: false
-     future: true
-     highlight:
-    -  enable: true
-    +  enable: false
-       line_number: true
-       auto_detect: false
-       tab_replace:
-    @@ -69,3 +69,10 @@ theme: landscape
-     ## Docs: https://hexo.io/docs/deployment.html
-     deploy:
-       type:
-    +
-    +# hexo-renderer-org
-    +## Docs: https://github.com/coldnew/hexo-render-org
-    +org:
-    +  emacs: /Applications/Emacs.app/Contents/MacOS/Emacs
-    +  cachedir: ./hexo-org-cache/
-    +  theme: tango-dark
+  #+BEGIN_SRC yaml
+    # hexo-renderer-org
+    ## Docs: https://github.com/coldnew/hexo-render-org
+    org:
+      emacs: /Applications/Emacs.app/Contents/MacOS/Emacs
+      cachedir: ./hexo-org-cache/
+      theme: tango-dark
+      common: |
+        ,#+OPTIONS: html-postamble:nil
   #+END_SRC
 
-  Here we disable [[https://highlightjs.org/][highlight.js]] feature since [[https://github.com/coldnew/hexo-renderer-org][coldnew/hexo-renderer-org]] can use [[emacs][emacs]] syntax highlight your source code blocks. We also need to let  [[https://github.com/coldnew/hexo-renderer-org][coldnew/hexo-renderer-org]] know where to find your emacs if it's not in your system path.
+  The =cachedir= is for [[https://github.com/coldnew/hexo-renderer-org][coldnew/hexo-renderer-org]] to store the cache files, this will speedup the render process.
 
-  The =cachedir= is for [[https://github.com/coldnew/hexo-renderer-org][coldnew/hexo-renderer-org]] to store the cache files, this will speedup the render process. You also can setup the emacs theme you want to use if it's build-in in emacs.
+  Since [[https://github.com/coldnew/hexo-renderer-org][coldnew/hexo-renderer-org]] can use [[emacs][emacs]] to syntax highlight your source code blocks, we setup the =theme= variable to specify emacs's build-in theme.
+  To make [[emacs][emacs]] syntax highlight code blocks properly, we also need to modify =highlight.enable= in =_config.yml=
+
+  #+BEGIN_SRC yaml
+    highlight:
+      # to make hexo-renderer-org htmlize content, this should set false
+      enable: false
+  #+END_SRC
 
 * Starting the server
 
