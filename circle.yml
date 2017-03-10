@@ -18,6 +18,7 @@ dependencies:
     - npm install
     - git submodule init
     - git submodule update
+    - rm -rf /home/ubuntu/.emacs.d
   cache_directories:
     - node_modules
     - hexo-org-cache
