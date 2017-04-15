@@ -8,7 +8,7 @@ machine:
   node:
     version: 4.7.2
   environment:
-    TERM: xterm-256
+    TERM: xterm-256color
 
 dependencies:
   pre:
