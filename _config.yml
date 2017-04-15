@@ -76,10 +76,11 @@ deploy:
 # hexo-renderer-org
 ## Docs: https://github.com/coldnew/hexo-render-org
 org:
-  # emacs: /Applications/Emacs.app/Contents/MacOS/Emacs
+  #emacs: /Applications/Emacs.app/Contents/MacOS/Emacs
+  #emacsclient: /Applications/Emacs.app/Contents/MacOS/bin/emacsclient
   cachedir: ./hexo-org-cache/
   theme: tango-dark
   debug: true  # enable to show some debug message
   common: |
     #+OPTIONS: html-postamble:nil
-  user_config: ./source/_emacs/init.el
+  user_config: ./emacs/init.el

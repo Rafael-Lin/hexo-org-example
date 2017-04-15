@@ -1,6 +1,6 @@
 #+TITLE: Getting Started with the Hexo and org-mode
 #+DATE: <2017-03-05 Sun 09:58>
-#+UPDATED: <2017-03-11 Sat 00:30>
+#+UPDATED: <2017-04-15 Sat 12:53>
 #+OPTIONS: num:nil toc:nil
 #+TAGS: hexo, org-mode
 #+CATEGORY: Tutorials
@@ -60,11 +60,16 @@ This post is based on [[https://www.cgmartin.com/2016/01/03/getting-started-with
     ## Docs: https://github.com/coldnew/hexo-render-org
     org:
       emacs: /Applications/Emacs.app/Contents/MacOS/Emacs
+      emacsclient: /Applications/Emacs.app/Contents/MacOS/bin/emacsclient
       cachedir: ./hexo-org-cache/
       theme: tango-dark
       common: |
         ,#+OPTIONS: html-postamble:nil
   #+END_SRC
+
+  You need to specify =emacs= and =emacsclient= path if they aren't in your shell path.
+
+  (Note that on Mac OSX, the emacs command in your path is =emacs-22=. We need =emacs-24= or oabove to make org-mode work properly)
 
   The =cachedir= is for [[https://github.com/coldnew/hexo-renderer-org][coldnew/hexo-renderer-org]] to store the cache files, this will speedup the render process.
 
