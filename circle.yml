@@ -7,6 +7,8 @@ machine:
   timezone: Asia/Taipei
   node:
     version: 4.7.2
+  environment:
+    TERM: xterm-256
 
 dependencies:
   pre:
@@ -19,6 +21,7 @@ dependencies:
     - git submodule init
     - git submodule update
     - rm -rf /home/ubuntu/.emacs.d
+    - echo $TERM
   cache_directories:
     - node_modules
     - hexo-org-cache
