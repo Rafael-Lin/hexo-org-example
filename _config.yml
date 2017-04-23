@@ -41,8 +41,8 @@ post_asset_folder: true
 relative_link: false
 future: true
 highlight:
-  enable: false  # to make hexo-renderer-org htmlize content, this should set false
-  line_number: true
+  enable: false
+  line_number: false
   auto_detect: false
   tab_replace:
 
@@ -81,6 +81,8 @@ org:
   cachedir: ./hexo-org-cache/
   theme: tango-dark
   debug: true  # enable to show some debug message
+  htmlize: true
+  line_number: false
   common: |
     #+OPTIONS: html-postamble:nil
   user_config: ./emacs/init.el

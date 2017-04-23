@@ -1,6 +1,6 @@
 #+TITLE: Getting Started with the Hexo and org-mode
 #+DATE: <2017-03-05 Sun 09:58>
-#+UPDATED: <2017-04-15 Sat 12:53>
+#+UPDATED: <2017-04-23 Sun 18:41>
 #+OPTIONS: num:nil toc:nil
 #+TAGS: hexo, org-mode
 #+CATEGORY: Tutorials
@@ -74,12 +74,20 @@ This post is based on [[https://www.cgmartin.com/2016/01/03/getting-started-with
   The =cachedir= is for [[https://github.com/coldnew/hexo-renderer-org][coldnew/hexo-renderer-org]] to store the cache files, this will speedup the render process.
 
   Since [[https://github.com/coldnew/hexo-renderer-org][coldnew/hexo-renderer-org]] can use [[emacs][emacs]] to syntax highlight your source code blocks, we setup the =theme= variable to specify emacs's build-in theme.
-  To make [[emacs][emacs]] syntax highlight code blocks properly, we also need to modify =highlight.enable= in =_config.yml=
+
+  #+BEGIN_SRC yaml
+    org:
+      # to make hexo-renderer-org htmlize content, this should set false
+      htmlize: true
+  #+END_SRC
+
+  If you only want to use highlight.js to syntax highlight your source code blocks, use following config instead:
 
   #+BEGIN_SRC yaml
     highlight:
-      # to make hexo-renderer-org htmlize content, this should set false
-      enable: false
+      enable: true
+    org:
+      htmlize: false
   #+END_SRC
 
 * Starting the server
