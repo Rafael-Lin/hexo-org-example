@@ -25,3 +25,7 @@
 
 ;; install yaml-mode for syntax highlight
 (package-install 'yaml-mode)
+
+;; We want to color the parentheses
+(package-install 'rainbow-delimiters)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
