@@ -1,0 +1,70 @@
+#+TITLE: Tips for org-mode 8 user
+#+DATE: <2017-04-26 Wed 14:41>
+#+TAGS: hexo, org-mode
+
+org-mode 9.x has some [[http://orgmode.org/Changes.html][breaking changes]] on export blocks, if you still want to use org-mode 8's syntax, here's the little guide on how to let [[https://github.com/coldnew/hexo-renderer-org][coldnew/hexo-renderer-org]] renderer the org-mode 8 syntax properly.
+
+#+HTML: <!-- more -->
+
+Before we started, let's look again what's different between org-mode 8 and org-mode 9:
+
+[[file:tips-for-org-mode-8-user/t1.png]]
+
+Oh, no. The export block syntax is different, let's add some snippet to let [[https://github.com/coldnew/hexo-renderer-org][coldnew/hexo-renderer-org]] can fix the render result:
+
+First, add following to your =_config.yml=
+
+#+BEGIN_SRC yaml
+     org:
+       # skip ...
+       user_config: './emacs/init.el'
+#+END_SRC
+
+Then add following code to your =./emacs/init.el=.
+
+#+BEGIN_SRC emacs-lisp
+     (defun org-mode-compability-fixup ()
+       ;; http://orgmode.org/Changes.html#orgf3f9c91
+       ;; Repair export blocks and INCLUDE keywords in current buffer.
+       (let ((case-fold-search t)
+             (back-end-re (regexp-opt
+                           '("HTML" "ASCII" "LATEX" "ODT" "MARKDOWN" "MD" "ORG"
+                             "MAN" "BEAMER" "TEXINFO" "GROFF" "KOMA-LETTER")
+                           t)))
+         (org-with-wide-buffer
+          (goto-char (point-min))
+          (let ((block-re (concat "^[ \t]*#\\+BEGIN_" back-end-re)))
+            (save-excursion
+              (while (re-search-forward block-re nil t)
+                (let ((element (save-match-data (org-element-at-point))))
+                  (when (eq (org-element-type element) 'special-block)
+                    (save-excursion
+                      (goto-char (org-element-property :end element))
+                      (save-match-data (search-backward "_"))
+                      (forward-char)
+                      (insert "EXPORT")
+                      (delete-region (point) (line-end-position)))
+                    (replace-match "EXPORT \\1" nil nil nil 1))))))
+          (let ((include-re
+                 (format "^[ \t]*#\\+INCLUDE: .*?%s[ \t]*$" back-end-re)))
+            (while (re-search-forward include-re nil t)
+              (let ((element (save-match-data (org-element-at-point))))
+                (when (and (eq (org-element-type element) 'keyword)
+                           (string= (org-element-property :key element) "INCLUDE"))
+                  (replace-match "EXPORT \\1" nil nil nil 1))))))))
+#+END_SRC
+
+We also need to modify the =hexo-renderer-org-exporter= like this:
+
+#+BEGIN_SRC emacs-lisp
+  (defun hexo-renderer-org-exporter ()
+    "The exporter function.
+  When execute this function, we must in the `org-mode' file.
+  This function is intend to let user overwrite in their user-config."
+    ;; Convert org-mode 8.x -> org-mode 9.x
+    (org-mode-compability-fixup)
+    ;; Export the result
+    (org-hexo-export-as-html))
+#+END_SRC
+
+Ok, restart your hexo and you'll find [[https://github.com/coldnew/hexo-renderer-org][coldnew/hexo-renderer-org]] can renderer org-mode 8 syntax now :)
