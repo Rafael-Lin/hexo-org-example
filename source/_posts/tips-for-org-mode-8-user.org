@@ -54,7 +54,9 @@ Then add following code to your =./emacs/init.el=.
                   (replace-match "EXPORT \\1" nil nil nil 1))))))))
 #+END_SRC
 
-We also need to modify the =hexo-renderer-org-exporter= like this:
+We also need to overwrite the =hexo-renderer-org-exporter= like this:
+
+(add to your =./emacs/init.el= too)
 
 #+BEGIN_SRC emacs-lisp
   (defun hexo-renderer-org-exporter ()
