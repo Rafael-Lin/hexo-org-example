@@ -1,6 +1,6 @@
 #+TITLE: Getting Started with the Hexo and org-mode
 #+DATE: <2017-03-05 Sun 09:58>
-#+UPDATED: <2017-04-23 Sun 18:41>
+#+UPDATED: <2017-04-27 Thu 13:08>
 #+OPTIONS: num:nil toc:nil
 #+TAGS: hexo, org-mode
 #+CATEGORY: Tutorials
@@ -155,12 +155,6 @@ This post is based on [[https://www.cgmartin.com/2016/01/03/getting-started-with
   #+END_SRC
 
   Saving changes to your [[org-mode][org-mode]] files will be automatically detected by the running =hexo server= and regenerated as static HTML files, *but you must refresh the browser to view the changes.*
-
-  #+HTML: <div class="bs-callout bs-callout-danger">
-  *Content not updated?*
-
-  Due to some limitation, [[https://github.com/coldnew/hexo-renderer-org][coldnew/hexo-renderer-org]] may take more time (about 3 ~ 6 sec) to renderer your org-mode files, just be patient.
-  #+HTML: </div>
 
   Your post should look something like this is browser:
 
