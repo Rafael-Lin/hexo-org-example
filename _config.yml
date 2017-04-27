@@ -83,6 +83,4 @@ org:
   debug: true  # enable to show some debug message
   htmlize: true
   line_number: false
-  common: |
-    #+OPTIONS: html-postamble:nil
   user_config: ./emacs/init.el
