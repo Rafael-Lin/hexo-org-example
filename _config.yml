@@ -79,8 +79,6 @@ org:
   #emacs: /Applications/Emacs.app/Contents/MacOS/Emacs
   #emacsclient: /Applications/Emacs.app/Contents/MacOS/bin/emacsclient
   cachedir: ./hexo-org-cache/
-  theme: tango-dark
   debug: true  # enable to show some debug message
-  htmlize: true
   line_number: false
-  user_config: ./emacs/init.el
+  daemonize: false
