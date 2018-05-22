@@ -18,6 +18,7 @@ dependencies:
     - sudo apt-get install -qq emacs24-nox emacs-snapshot
     - sudo update-alternatives --set emacs /usr/bin/emacs-snapshot
     - npm install
+    - npm install hexo-cli -g
     - git submodule init
     - git submodule update
     - rm -rf /home/ubuntu/.emacs.d
