@@ -29,6 +29,7 @@ dependencies:
 
 test:
   override:
+    - npm install hexo --save
     - hexo clean
     - hexo g
 
