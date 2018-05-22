@@ -1,0 +1,77 @@
+#+TITLE: Use org-download to drag image to emacs
+#+DATE: <2018-05-22 Tue 16:08>
+#+UPDATED: <2018-05-22 Tue 16:08>
+#+OPTIONS: num:nil toc:nil
+#+TAGS: hexo, org-mode
+#+CATEGORY: Tutorials
+
+#+LINK: emacs     https://www.gnu.org/s/emacs
+#+LINK: hexo      https://hexo.io/
+#+LINK: org-mode  https://orgmode.org
+#+LINK: markdown https://en.wikipedia.org/wiki/Markdown
+
+Now we know how to create our posts and insert image via org-mode's =C-c i= (org-insert-link), let's talk about how to use =drag-and-drop= method to add image to your post.
+
+#+HTML: <div class="bs-callout bs-callout-info">
+*Note*
+
+Drag-and-drop image *ONLY* support under *GUI* emacs.
+#+HTML: </div>
+
+#+HTML: <!-- more -->
+
+* How to start ?
+
+To make drag-and-drop image to work on emacs, first you need to install [[https://github.com/abo-abo/org-download][org-download]]. Just use emacs's =M-x= with =package-install= to add this package to your emacs.
+
+#+BEGIN_EXAMPLE
+  M-x package-install RET org-download RET
+#+END_EXAMPLE
+
+If you use [[https://github.com/jwiegley/use-package][use-package]] to install package in your emacs, you can use following code instead
+
+#+BEGIN_SRC emacs-lisp
+  (use-package org-download
+    :ensure t
+    :config
+    ;; add support to dired
+    (add-hook 'dired-mode-hook 'org-download-enable))
+#+END_SRC
+
+* Add .dir-locals.el
+
+Now we need to add =.dir-locals.el= to our hexo's root directory, create a file called =.dir-locals.el= with following contents
+
+#+BEGIN_SRC emacs-lisp
+  ((nil .
+        ((eval .
+               (progn
+
+                 ;; make drag-and-drop image save in the same name folder as org file
+                 ;; ex: `aa-bb-cc.org' then save image test.png to `aa-bb-cc/test.png'
+                 (defun my-org-download-method (link)
+                   (let ((filename
+                          (file-name-nondirectory
+                           (car (url-path-and-query
+                                 (url-generic-parse-url link)))))
+                         (dirname (file-name-sans-extension (buffer-name)) ))
+                     (make-directory dirname)
+                     (expand-file-name filename dirname)))
+
+                 (setq-local org-download-method 'my-org-download-method)
+
+                 ;; setup for hexo.el
+                 (setq-local hexo-new-format 'org)
+
+                 )))))
+#+END_SRC
+
+This will help emacs use =my-org-download-method= when enter the hexo project.
+
+* Drag and Drop images
+
+Now you can drag and drop image to your posts.
+
+For example, you the posts you edit is called =hi-this-is-a-post.org=, the [[https://github.com/abo-abo/org-download][org-download]] will create a folder called =hi-this-is-a-post= and contains the image you drag into.
+
+Happy coding :)
