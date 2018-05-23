@@ -19,6 +19,7 @@ dependencies:
     - sudo update-alternatives --set emacs /usr/bin/emacs-snapshot
     - rm -rf node_modules
     - nvm install stable
+    - npm install -g npm
     - npm install
     - git submodule init
     - git submodule update
