@@ -17,7 +17,6 @@ dependencies:
     - sudo apt-get update
     - sudo apt-get install -qq emacs24-nox emacs-snapshot
     - sudo update-alternatives --set emacs /usr/bin/emacs-snapshot
-    - rm -rf node_modules
     - npm install
     - git submodule init
     - git submodule update
