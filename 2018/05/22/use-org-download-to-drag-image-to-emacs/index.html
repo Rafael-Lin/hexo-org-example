@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Use org-download to drag image to emacs | hexo-org-example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Now we know how to create our posts and insert image via org-mode&apos;s C-c i (org-insert-link), let&apos;s talk about how to use drag-and-drop method to add image to your post.     Note    Drag-and-drop ima">
+<meta name="keywords" content="hexo,org-mode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Use org-download to drag image to emacs">
+<meta property="og:url" content="https://coldnew.github.io/hexo-org-example/2018/05/22/use-org-download-to-drag-image-to-emacs/index.html">
+<meta property="og:site_name" content="hexo-org-example">
+<meta property="og:description" content="Now we know how to create our posts and insert image via org-mode&apos;s C-c i (org-insert-link), let&apos;s talk about how to use drag-and-drop method to add image to your post.     Note    Drag-and-drop ima">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2018-05-22T08:08:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Use org-download to drag image to emacs">
+<meta name="twitter:description" content="Now we know how to create our posts and insert image via org-mode&apos;s C-c i (org-insert-link), let&apos;s talk about how to use drag-and-drop method to add image to your post.     Note    Drag-and-drop ima">
+<link rel="publisher" href="https://plus.google.com/u/0/106837301382084981260/posts">
+  
+    <link rel="alternate" href="/hexo-org-example/atom.xml" title="hexo-org-example" type="application/atom+xml">
+  
+  
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/hexo-org-example/css/styles.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-42122243-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/hexo-org-example/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/hexo-org-example/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">hexo-org-example</h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-use-org-download-to-drag-image-to-emacs" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Use org-download to drag image to emacs
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+    Published:
+  <a href="/hexo-org-example/2018/05/22/use-org-download-to-drag-image-to-emacs/" class="article-date"><time datetime="2018-05-22T08:08:00.000Z" itemprop="datePublished">2018-05-22</time></a>
+</div>
+
+    
+    <div class="article-datetime">
+    Last Modified:
+  <a href="/hexo-org-example/2018/05/22/use-org-download-to-drag-image-to-emacs/" class="article-date"><time datetime="2018-05-22T08:08:00.000Z" itemprop="datePublished">2018-05-22</time></a>
+</div>
+
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div id="content">
+<p>
+Now we know how to create our posts and insert image via org-mode's <code>C-c i</code> (org-insert-link), let's talk about how to use <code>drag-and-drop</code> method to add image to your post.
+</p>
+
+<div class="bs-callout bs-callout-info">
+<p>
+<b>Note</b>
+</p>
+
+<p>
+Drag-and-drop image <b>ONLY</b> support under <b>GUI</b> emacs.
+</p>
+</div>
+
+<a id="more"></a>
+
+<div id="outline-container-orge85b1ee" class="outline-2">
+<h2 id="orge85b1ee">How to start ?</h2>
+<div class="outline-text-2" id="text-orge85b1ee">
+<p>
+To make drag-and-drop image to work on emacs, first you need to install <a href="https://github.com/abo-abo/org-download" target="_blank" rel="noopener">org-download</a>. Just use emacs's <code>M-x</code> with <code>package-install</code> to add this package to your emacs.
+</p>
+
+<pre class="example">
+M-x package-install RET org-download RET
+</pre>
+
+<p>
+If you use <a href="https://github.com/jwiegley/use-package" target="_blank" rel="noopener">use-package</a> to install package in your emacs, you can use following code instead
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span>use-package org-download
+  <span style="color: #e090d7;">:ensure</span> t
+  <span style="color: #e090d7;">:config</span>
+  <span style="color: #73d216;">;; </span><span style="color: #73d216;">add support to dired</span>
+  <span style="color: #93a8c6;">(</span>add-hook 'dired-mode-hook 'org-download-enable<span style="color: #93a8c6;">)</span><span style="color: #8c8c8c;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8f48297" class="outline-2">
+<h2 id="org8f48297">Add .dir-locals.el</h2>
+<div class="outline-text-2" id="text-org8f48297">
+<p>
+Now we need to add <code>.dir-locals.el</code> to our hexo's root directory, create a file called <code>.dir-locals.el</code> with following contents
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #8c8c8c;">(</span><span style="color: #93a8c6;">(</span>nil
+  .
+  <span style="color: #b0b1a3;">(</span><span style="color: #97b098;">(</span>eval
+    .
+    <span style="color: #aebed8;">(</span><span style="color: #b4fa70;">progn</span>
+
+      <span style="color: #73d216;">;; </span><span style="color: #73d216;">make drag-and-drop image save in the same name folder as org file</span>
+      <span style="color: #73d216;">;; </span><span style="color: #73d216;">ex: `</span><span style="color: #e9b2e3;">aa-bb-cc.org</span><span style="color: #73d216;">' then save image test.png to `</span><span style="color: #e9b2e3;">aa-bb-cc/test.png</span><span style="color: #73d216;">'</span>
+      <span style="color: #b0b0b3;">(</span><span style="color: #b4fa70;">defun</span> <span style="color: #fce94f;">my-org-download-method</span> <span style="color: #90a890;">(</span>link<span style="color: #90a890;">)</span>
+        <span style="color: #90a890;">(</span><span style="color: #b4fa70;">let</span> <span style="color: #a2b6da;">(</span><span style="color: #9cb6ad;">(</span>filename
+               <span style="color: #8c8c8c;">(</span>file-name-nondirectory
+                <span style="color: #93a8c6;">(</span>car <span style="color: #b0b1a3;">(</span>url-path-and-query
+                      <span style="color: #97b098;">(</span>url-generic-parse-url link<span style="color: #97b098;">)</span><span style="color: #b0b1a3;">)</span><span style="color: #93a8c6;">)</span><span style="color: #8c8c8c;">)</span><span style="color: #9cb6ad;">)</span>
+              <span style="color: #9cb6ad;">(</span>dirname <span style="color: #8c8c8c;">(</span>file-name-sans-extension <span style="color: #93a8c6;">(</span>buffer-name<span style="color: #93a8c6;">)</span><span style="color: #8c8c8c;">)</span> <span style="color: #9cb6ad;">)</span><span style="color: #a2b6da;">)</span>
+          <span style="color: #73d216;">;; </span><span style="color: #73d216;">if directory not exist, create it</span>
+          <span style="color: #a2b6da;">(</span><span style="color: #b4fa70;">unless</span> <span style="color: #9cb6ad;">(</span>file-exists-p dirname<span style="color: #9cb6ad;">)</span>
+            <span style="color: #9cb6ad;">(</span>make-directory dirname<span style="color: #9cb6ad;">)</span><span style="color: #a2b6da;">)</span>
+          <span style="color: #73d216;">;; </span><span style="color: #73d216;">return the path to save the download files</span>
+          <span style="color: #a2b6da;">(</span>expand-file-name filename dirname<span style="color: #a2b6da;">)</span><span style="color: #90a890;">)</span><span style="color: #b0b0b3;">)</span>
+
+      <span style="color: #73d216;">;; </span><span style="color: #73d216;">only modify `</span><span style="color: #e9b2e3;">org-download-method</span><span style="color: #73d216;">' in this project</span>
+      <span style="color: #b0b0b3;">(</span><span style="color: #b4fa70;">setq-local</span> org-download-method 'my-org-download-method<span style="color: #b0b0b3;">)</span>
+
+      <span style="color: #aebed8;">)</span><span style="color: #97b098;">)</span><span style="color: #b0b1a3;">)</span><span style="color: #93a8c6;">)</span><span style="color: #8c8c8c;">)</span>
+</pre>
+</div>
+
+<p>
+This will help emacs use <code>my-org-download-method</code> when enter the hexo project.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0518385" class="outline-2">
+<h2 id="org0518385">Drag and Drop images</h2>
+<div class="outline-text-2" id="text-org0518385">
+<p>
+Now you can drag and drop image to your posts.
+</p>
+
+<p>
+For example, you the posts you edit is called <code>hi-this-is-a-post.org</code>, the <a href="https://github.com/abo-abo/org-download" target="_blank" rel="noopener">org-download</a> will create a folder called <code>hi-this-is-a-post</code> and contains the image you drag into.
+</p>
+
+<p>
+Happy coding :)
+</p>
+</div>
+</div>
+</div>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://coldnew.github.io/hexo-org-example/2018/05/22/use-org-download-to-drag-image-to-emacs/" data-id="cjhvccmkl0003vjg07dwdl4f1" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-org-example/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-org-example/tags/org-mode/">org-mode</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/hexo-org-example/2017/04/26/tips-for-org-mode-8-user/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Tips for org-mode 8 user</span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>This is <b>DEMO Site</b> for how to use <a href="https://hexo.io/">hexo</a> with <a href="https://orgmode.org">org-mode</a>. For more info, please see this project's <a href="https://github.com/coldnew/hexo-org-example">REAME.md</a>. <br><br> Sources: <a href="https://github.com/coldnew/hexo-org-example"> https://github.com/coldnew/hexo-org-example</a> </p>
+
+</div>
+
+
+  
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hexo-org-example/tags/hexo/">hexo</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hexo-org-example/tags/org-mode/">org-mode</a><span class="sidebar-module-list-count">4</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/hexo-org-example/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/hexo-org-example/tags/org-mode/" style="font-size: 10px;">org-mode</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hexo-org-example/archives/2018/05/">五月 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hexo-org-example/archives/2017/04/">四月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hexo-org-example/archives/2017/03/">三月 2017</a><span class="sidebar-module-list-count">2</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/hexo-org-example/2018/05/22/use-org-download-to-drag-image-to-emacs/">Use org-download to drag image to emacs</a>
+        </li>
+      
+        <li>
+          <a href="/hexo-org-example/2017/04/26/tips-for-org-mode-8-user/">Tips for org-mode 8 user</a>
+        </li>
+      
+        <li>
+          <a href="/hexo-org-example/2017/03/05/getting-started-with-hexo-and-org-mode/">Getting Started with the Hexo and org-mode</a>
+        </li>
+      
+        <li>
+          <a href="/hexo-org-example/2017/03/05/hello-world/">Hello World</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Yen-Chin, Lee<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/hexo-org-example/js/script.js"></script>
+
+</body>
+</html>

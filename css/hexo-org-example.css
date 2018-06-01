@@ -1,0 +1,5 @@
+/* based on emacs's tango-dark theme */
+pre.src, pre.example {
+    color: #eeeeec;
+    background: #2e3436;
+}

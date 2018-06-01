@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Getting Started with the Hexo and org-mode | hexo-org-example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="New to blogging with the Hexo framework and org-mode? This tutorial will walk you through installing Hexo, running a local server, and creating your first blog post with org-mode.     Disclaimer">
+<meta name="keywords" content="hexo,org-mode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Getting Started with the Hexo and org-mode">
+<meta property="og:url" content="https://coldnew.github.io/hexo-org-example/2017/03/05/getting-started-with-hexo-and-org-mode/index.html">
+<meta property="og:site_name" content="hexo-org-example">
+<meta property="og:description" content="New to blogging with the Hexo framework and org-mode? This tutorial will walk you through installing Hexo, running a local server, and creating your first blog post with org-mode.     Disclaimer">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://coldnew.github.io/hexo-org-example/2017/03/05/getting-started-with-hexo-and-org-mode/first-post.png">
+<meta property="og:image" content="https://coldnew.github.io/hexo-org-example/2017/03/05/getting-started-with-hexo-and-org-mode/add_image.png">
+<meta property="og:updated_time" content="2017-04-27T05:08:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Getting Started with the Hexo and org-mode">
+<meta name="twitter:description" content="New to blogging with the Hexo framework and org-mode? This tutorial will walk you through installing Hexo, running a local server, and creating your first blog post with org-mode.     Disclaimer">
+<meta name="twitter:image" content="https://coldnew.github.io/hexo-org-example/2017/03/05/getting-started-with-hexo-and-org-mode/first-post.png">
+<link rel="publisher" href="https://plus.google.com/u/0/106837301382084981260/posts">
+  
+    <link rel="alternate" href="/hexo-org-example/atom.xml" title="hexo-org-example" type="application/atom+xml">
+  
+  
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/hexo-org-example/css/styles.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-42122243-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/hexo-org-example/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/hexo-org-example/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">hexo-org-example</h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-getting-started-with-hexo-and-org-mode" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Getting Started with the Hexo and org-mode
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+    Published:
+  <a href="/hexo-org-example/2017/03/05/getting-started-with-hexo-and-org-mode/" class="article-date"><time datetime="2017-03-05T01:58:00.000Z" itemprop="datePublished">2017-03-05</time></a>
+</div>
+
+    
+    <div class="article-datetime">
+    Last Modified:
+  <a href="/hexo-org-example/2017/03/05/getting-started-with-hexo-and-org-mode/" class="article-date"><time datetime="2017-04-27T05:08:00.000Z" itemprop="datePublished">2017-04-27</time></a>
+</div>
+
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div id="content">
+<p>
+New to blogging with the <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo framework</a> and <a href="https://orgmode.org" target="_blank" rel="noopener">org-mode</a>? This tutorial will walk you through installing Hexo, running a local server, and creating your first blog post with <a href="https://orgmode.org" target="_blank" rel="noopener">org-mode</a>.
+</p>
+
+<div class="bs-callout bs-callout-info">
+<p>
+<b>Disclaimer</b>
+</p>
+
+<p>
+This post is based on <a href="https://www.cgmartin.com/2016/01/03/getting-started-with-hexo-blog/" target="_blank" rel="noopener">Getting Started with the Hexo Blogging Framework</a> by <a href="https://github.com/cgmartin" target="_blank" rel="noopener">Christopher Martin</a>, which is a really nice post to getting start with <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo Framrwork</a>.
+</p>
+</div>
+
+<a id="more"></a>
+
+<div id="outline-container-org537e778" class="outline-2">
+<h2 id="org537e778">Installing the Hexo CLI</h2>
+<div class="outline-text-2" id="text-org537e778">
+<div class="bs-callout bs-callout-warning">
+<p>
+<b>Requirements</b>
+</p>
+
+<p>
+You'll need <a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank" rel="noopener">Node.js</a> and <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank" rel="noopener">Git</a> installed as pre-requisites.
+</p>
+</div>
+
+<p>
+Install the Hexo command line interface (CLI) globally with the Node.js package manager (NPM):
+</p>
+
+<pre class="example">
+npm install -g hexo-cli
+
+</pre>
+
+<p>
+&#x2026;once installed, use the <code>hexo init</code> command to create a new blog project:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">hexo init my-blog &amp;&amp; <span style="color: #e090d7;">cd</span> my-blog
+</pre>
+</div>
+
+<p>
+This step can take a few minutes while it creates an <a href="https://hexo.io/docs/setup.html" target="_blank" rel="noopener">initial file structure for your site</a> and downloads other Node.js dependencies.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org72a0209" class="outline-2">
+<h2 id="org72a0209">Installing the hexo-renderer-org</h2>
+<div class="outline-text-2" id="text-org72a0209">
+<p>
+Since we want to integrated <a href="https://hexo.io/" target="_blank" rel="noopener">hexo</a> with <a href="https://orgmode.org" target="_blank" rel="noopener">org-mode</a>, we need to install renderer plugin to make <a href="https://hexo.io/" target="_blank" rel="noopener">hexo</a> can recognize the <a href="https://orgmode.org" target="_blank" rel="noopener">org-mode</a> file. Currently, there's two main org-mode renderer for hexo:
+</p>
+
+<ul class="org-ul">
+<li><a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="noopener">CodeFalling/hexo-renderer-org</a></li>
+<li><a href="https://github.com/coldnew/hexo-renderer-org" target="_blank" rel="noopener">coldnew/hexo-renderer-org</a> (<i>fork</i>)</li>
+</ul>
+
+<p>
+This site is demo project for <a href="https://github.com/coldnew/hexo-renderer-org" target="_blank" rel="noopener">coldnew/hexo-renderer-org</a> so we'll use his fork instead. Install the renderer is really simple, just type:
+</p>
+
+<pre class="example">
+npm install https://github.com/coldnew/hexo-renderer-org#coldnew --save
+
+</pre>
+
+<p>
+then npm will save information to <code>package.json</code>.
+</p>
+
+<p>
+Now we need to modify the <code>_config.yml</code> to add some config for <a href="https://github.com/coldnew/hexo-renderer-org" target="_blank" rel="noopener">coldnew/hexo-renderer-org</a>, you should add following contents:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-yaml"><span style="color: #73d216;"># </span><span style="color: #73d216;">hexo-renderer-org</span>
+<span style="color: #73d216;">## </span><span style="color: #73d216;">Docs: https://github.com/coldnew/hexo-render-org</span>
+<span style="color: #fcaf3e;">org</span>:
+  <span style="color: #fcaf3e;">emacs</span>: /Applications/Emacs.app/Contents/MacOS/Emacs
+  <span style="color: #fcaf3e;">emacsclient</span>: /Applications/Emacs.app/Contents/MacOS/bin/emacsclient
+  <span style="color: #fcaf3e;">cachedir</span>: ./hexo-org-cache/
+  <span style="color: #fcaf3e;">theme</span>: tango-dark
+  <span style="color: #fcaf3e;">common</span>: |
+    <span style="color: #73d216;">#</span><span style="color: #73d216;">+OPTIONS: html-postamble:nil</span>
+</pre>
+</div>
+
+<p>
+You need to specify <code>emacs</code> and <code>emacsclient</code> path if they aren't in your shell path.
+</p>
+
+<p>
+(Note that on Mac OSX, the emacs command in your path is <code>emacs-22</code>. We need <code>emacs-24</code> or oabove to make org-mode work properly)
+</p>
+
+<p>
+The <code>cachedir</code> is for <a href="https://github.com/coldnew/hexo-renderer-org" target="_blank" rel="noopener">coldnew/hexo-renderer-org</a> to store the cache files, this will speedup the render process.
+</p>
+
+<p>
+Since <a href="https://github.com/coldnew/hexo-renderer-org" target="_blank" rel="noopener">coldnew/hexo-renderer-org</a> can use <a href="https://www.gnu.org/s/emacs" target="_blank" rel="noopener">emacs</a> to syntax highlight your source code blocks, we setup the <code>theme</code> variable to specify emacs's build-in theme.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-yaml"><span style="color: #fcaf3e;">org</span>:
+  <span style="color: #73d216;"># </span><span style="color: #73d216;">to make hexo-renderer-org htmlize content, this should set false</span>
+  <span style="color: #fcaf3e;">htmlize</span>: <span style="color: #e9b2e3;">true</span>
+</pre>
+</div>
+
+<p>
+If you only want to use highlight.js to syntax highlight your source code blocks, use following config instead:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-yaml"><span style="color: #fcaf3e;">highlight</span>:
+  <span style="color: #fcaf3e;">enable</span>: <span style="color: #e9b2e3;">true</span>
+<span style="color: #fcaf3e;">org</span>:
+  <span style="color: #fcaf3e;">htmlize</span>: <span style="color: #e9b2e3;">false</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org76efdc3" class="outline-2">
+<h2 id="org76efdc3">Starting the server</h2>
+<div class="outline-text-2" id="text-org76efdc3">
+<p>
+To view your newly created site in a browser, start the local server:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">hexo server --draft --open
+
+INFO  Hexo is running at http://localhost:4000/hexo-org-example/. Press Ctrl+C to stop.
+</pre>
+</div>
+
+<div class="bs-callout bs-callout-danger">
+<p>
+<b>Didn't work?</b>
+</p>
+
+<p>
+Your current working directory must be in the <code>my-blog</code> project folder, or the server will not start.
+</p>
+</div>
+
+<p>
+This starts the server with a few extra options:
+</p>
+
+<ul class="org-ul">
+<li><code>--draft</code>: Enable viwable <i>draft</i> posts (by default, drafts are hidden)</li>
+<li><code>--open</code>: Open the local site in your browser</li>
+</ul>
+
+<p>
+A browser should pop up and display the default blog site with a canned "Hello World" post.
+</p>
+
+<p>
+You'll want to leave the server running in the terminal while authoring.The server process will watch for changes made to the <a href="https://orgmode.org" target="_blank" rel="noopener">org-mode</a> source files and automatically generate new HTML files.The server's console log output is also helpful for troubleshooting errors that you may run across.
+</p>
+
+<div class="bs-callout bs-callout-warning">
+<p>
+<b>Heads up</b>
+</p>
+
+<p>
+Be aware the some actions require a restart of the server:
+</p>
+
+<ul class="org-ul">
+<li>Editing the project's <code>_config.yml</code></li>
+<li>Installing or updating Hexo plugins with <code>npm</code></li>
+<li>Making changes to local plugins within the <code>scripts</code> folder(s)</li>
+</ul>
+
+<p>
+Since most of the authoring time is spent within the org-mode files, a hard restart isn't require too often.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdd5100f" class="outline-2">
+<h2 id="orgdd5100f">Creating your first post</h2>
+<div class="outline-text-2" id="text-orgdd5100f">
+<p>
+Since <a href="https://hexo.io/" target="_blank" rel="noopener">hexo</a> doesn't support <a href="https://orgmode.org" target="_blank" rel="noopener">org-mode</a> officially, we start our first post on our own. Unlike <a href="https://en.wikipedia.org/wiki/Markdown" target="_blank" rel="noopener">Markdown</a> which doesn't has a standard, a <a href="https://orgmode.org" target="_blank" rel="noopener">org-mode</a> post is just like other <a href="https://orgmode.org" target="_blank" rel="noopener">org-mode</a> post you write before, let's create a file named <code>My-First-Blog-Post.org</code> in <code>./source/_drafts/My-First-Blog-Post.org</code> and open the file with your favorite editor.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">emacs ./source/_drafts/My-First-Blog-Post.org
+<span style="color: #73d216;"># </span><span style="color: #73d216;">open and create ./source/_drafts/My-First-Blog-Post.org</span>
+</pre>
+</div>
+
+<p>
+Lets add some texts in our new post
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="color: #b3b3b3;">#+TITLE:</span> <span style="color: #afeeee; font-weight: bold;">My First Blog Post</span>
+<span style="color: #73d216;">#+TAGS: org-mode, hexo</span>
+
+This is some content.
+
+<span style="color: #fce94f;">* Hello there</span>
+
+  This is other content.
+
+<span style="color: #73d216;">  #+BEGIN_SRC sh</span>
+<span style="color: #b3b3b3;">    </span><span style="color: #73d216;"># </span><span style="color: #73d216;">Test emacs's syntax highlight</span>
+<span style="color: #b3b3b3;">    </span><span style="color: #e090d7;">echo</span><span style="color: #b3b3b3;"> </span><span style="color: #e9b96e;">"Hello hexo-renderer-org"</span>
+<span style="color: #73d216;">  #+END_SRC</span>
+</pre>
+</div>
+
+<p>
+Saving changes to your <a href="https://orgmode.org" target="_blank" rel="noopener">org-mode</a> files will be automatically detected by the running <code>hexo server</code> and regenerated as static HTML files, <b>but you must refresh the browser to view the changes.</b>
+</p>
+
+<p>
+Your post should look something like this is browser:
+</p>
+
+
+<div class="figure">
+<p><img src="first-post.png">
+</p>
+</div>
+
+<p>
+If you dislike having to manually refresh the browser each time, the <a href="https://www.npmjs.com/package/hexo-livereload" target="_blank" rel="noopener">hexo-livereload</a> or <a href="https://www.npmjs.com/package/hexo-browsersync" target="_blank" rel="noopener">hexo-browsersync</a> plugins can do it automatically.
+</p>
+
+<p>
+To install the <code>hexo-browsersync</code> plugin (my personal favorite):
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">npm install hexo-browsersync --save
+hexo server --draft --open <span style="color: #73d216;"># </span><span style="color: #73d216;">restart the server</span>
+</pre>
+</div>
+
+<div class="bs-callout bs-callout-info">
+<p>
+<b>Tip</b>
+</p>
+
+<p>
+Other <a href="https://hexo.io/plugins/" target="_blank" rel="noopener">Hexo plugins</a> can be easily installed in this same way, using <code>npm</code>.
+</p>
+
+<p>
+Many plugins will have configuration that can be tweaked form within the project's <code>_config.yml</code> file. You'll need to consult each plugin's documentation for their specific configuration properties.
+</p>
+
+<p>
+In the case of <code>hexo-browsersync</code>, the defaults work fine and don't requre editiog the <code>_config.yml</code> file.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf286ed9" class="outline-2">
+<h2 id="orgf286ed9">Displaying summary excerpts in listings</h2>
+<div class="outline-text-2" id="text-orgf286ed9">
+<p>
+Say you have a lenghty post and don't like the fact that the entire article is displayed in the listing pages&#x2026;
+</p>
+
+<p>
+You can mark a spot in your <a href="https://orgmode.org" target="_blank" rel="noopener">org-mode</a> file with <code>#+HTML: &lt;!-- more --&gt;</code> to hide it from the listing pages. It will be replaced with a "Read more" link that will open the rest of the article content.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="color: #b3b3b3;">#+TITLE:</span> <span style="color: #afeeee; font-weight: bold;">My First Blog Post</span>
+<span style="color: #73d216;">#+TAGS: org-mode, hexo</span>
+
+This is a summary of the post.
+
+<span style="color: #73d216;">#+HTML: &lt;!-- more --&gt;</span>
+
+This is some content.
+
+<span style="color: #fce94f;">* Hello there</span>
+
+  This is other content.
+
+<span style="color: #73d216;">  #+BEGIN_SRC sh</span>
+<span style="color: #b3b3b3;">    </span><span style="color: #73d216;"># </span><span style="color: #73d216;">Test emacs's syntax highlight</span>
+<span style="color: #b3b3b3;">    </span><span style="color: #e090d7;">echo</span><span style="color: #b3b3b3;"> </span><span style="color: #e9b96e;">"Hello hexo-renderer-org"</span>
+<span style="color: #73d216;">  #+END_SRC</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc3f085e" class="outline-2">
+<h2 id="orgc3f085e">Inserting images</h2>
+<div class="outline-text-2" id="text-orgc3f085e">
+<p>
+Images and other asset files can be placed in subdirectories under the <code>./sources/</code> folder. Use this <a href="https://upload.wikimedia.org/wikipedia/en/9/93/Ateam.jpg" target="_blank" rel="noopener">picture of the original A-Team</a> from Wikipedia as a test. Download it and save it to this path:
+</p>
+
+<pre class="example">
+./source/images/Ateam.jpg
+
+</pre>
+
+<p>
+Edit your original post, inserting a markdown image link with a reference to <code>/images/Ateam.jpg</code>:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="color: #b3b3b3;">#+TITLE:</span> <span style="color: #afeeee; font-weight: bold;">My First Blog Post</span>
+<span style="color: #73d216;">#+TAGS: org-mode, hexo</span>
+
+This is some content.
+
+<span style="color: #729fcf; text-decoration: underline;"><a href="file:/images/Ateam.jpg" target="_blank" rel="noopener">file:/images/Ateam.jpg</a></span>
+</pre>
+</div>
+
+<p>
+However, this is not the <a href="https://orgmode.org" target="_blank" rel="noopener">org-mode</a> way to insert image, in <a href="https://orgmode.org" target="_blank" rel="noopener">https://orgmode.org</a> way, we can use <code>M-x org-toggle-inline-image</code> to show the image in our emacs (GUI).
+</p>
+
+<p>
+To make assets be organized in <b>folders for each posts</b>. It requires enabling the <code>post_asset_folder: true</code> setting in <code>_config.yml</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-yaml"><span style="color: #fcaf3e;">post_asset_folder</span>: <span style="color: #e9b2e3;">true</span>
+</pre>
+</div>
+
+<p>
+After enable this feature, let's create a asset directory with the same name as our post:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">mkdir -p source/_posts/My-First-Blog-Post
+wget https://upload.wikimedia.org/wikipedia/en/9/93/Ateam.jpg -O source/_posts/My-First-Blog-Post/Ateam.jpg
+</pre>
+</div>
+
+<p>
+then, edit our <a href="https://orgmode.org" target="_blank" rel="noopener">org-mode</a> file, you can use <code>C-c i</code> to insert file you want;
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="color: #b3b3b3;">#+TITLE:</span> <span style="color: #afeeee; font-weight: bold;">My First Blog Post</span>
+<span style="color: #73d216;">#+TAGS: org-mode, hexo</span>
+
+This is some content.
+
+<span style="color: #729fcf; text-decoration: underline;"><a href="file:My-First-Blog-Post/Ateam.jpg" target="_blank" rel="noopener">file:My-First-Blog-Post/Ateam.jpg</a></span>
+</pre>
+</div>
+
+<p>
+Now you should see something like this in the browser:
+</p>
+
+
+<div class="figure">
+<p><img src="add_image.png">
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga07443c" class="outline-2">
+<h2 id="orga07443c">Publishing drafts</h2>
+<div class="outline-text-2" id="text-orga07443c">
+<p>
+When it's time to move the draft to a "live" post for the world to see, we just need move file in <code>sources/_drafts</code> folder to <code>sources/_posts</code> folder then add timestamp.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #73d216;"># </span><span style="color: #73d216;">Move org-mode file</span>
+mv sources/_drafts/My-First-Blog-Post.org  sources/_posts
+<span style="color: #73d216;"># </span><span style="color: #73d216;">Move assets</span>
+mv sources/_drafts/My-First-Blog-Post      sources/_posts
+</pre>
+</div>
+
+<p>
+Now, edit the <code>sources/_posts/My-First-Blog-Post.org</code>, add <a href="http://orgmode.org/guide/Export-options.html" target="_blank" rel="noopener">Export-options</a> <code>#+DATE:</code> to your post, you can use <code>C-u C-c .</code> add timestamp.
+</p>
+
+<p>
+Your posts should look like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="color: #b3b3b3;">#+TITLE:</span> <span style="color: #afeeee; font-weight: bold;">My First Blog Post</span>
+<span style="color: #b3b3b3;">#+DATE:</span> <span style="color: #afeeee;">&lt;2017-03-05 Sun 11:45&gt;</span>
+<span style="color: #73d216;">#+TAGS: org-mode, hexo</span>
+
+This is some content.
+
+<span style="color: #729fcf; text-decoration: underline;"><a href="file:My-First-Blog-Post/Ateam.jpg" target="_blank" rel="noopener">file:My-First-Blog-Post/Ateam.jpg</a></span>
+</pre>
+</div>
+
+<p>
+Finally, prepare the entire site for deployment. Run the <code>hexo generate</code> command:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">hexo generate
+<span style="color: #73d216;"># </span><span style="color: #73d216;">generates -&gt; ./public/</span>
+</pre>
+</div>
+
+<p>
+Everything that is required to run the website will be placed inside the <code>./public</code> folder. You are all set to take this folder and transfer it to your public webserver or CDN.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org99efa56" class="outline-2">
+<h2 id="org99efa56">Next steps</h2>
+<div class="outline-text-2" id="text-org99efa56">
+<p>
+For next steps, please refer to orginal post: <a href="https://www.cgmartin.com/2016/01/03/getting-started-with-hexo-blog/" target="_blank" rel="noopener">Getting Started with the Hexo Blogging Framework</a>.
+</p>
+
+<p>
+If you has any question, feel free to submit <a href="https://github.com/coldnew/hexo-renderer-org/issues" target="_blank" rel="noopener">issue</a>.</p>
+</div>
+</div>
+</div>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://coldnew.github.io/hexo-org-example/2017/03/05/getting-started-with-hexo-and-org-mode/" data-id="cjhvccmj10000vjg0eiqirg0r" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-org-example/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-org-example/tags/org-mode/">org-mode</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/hexo-org-example/2017/03/05/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Hello World</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/hexo-org-example/2017/04/26/tips-for-org-mode-8-user/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">Tips for org-mode 8 user</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>This is <b>DEMO Site</b> for how to use <a href="https://hexo.io/">hexo</a> with <a href="https://orgmode.org">org-mode</a>. For more info, please see this project's <a href="https://github.com/coldnew/hexo-org-example">REAME.md</a>. <br><br> Sources: <a href="https://github.com/coldnew/hexo-org-example"> https://github.com/coldnew/hexo-org-example</a> </p>
+
+</div>
+
+
+  
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hexo-org-example/tags/hexo/">hexo</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hexo-org-example/tags/org-mode/">org-mode</a><span class="sidebar-module-list-count">4</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/hexo-org-example/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/hexo-org-example/tags/org-mode/" style="font-size: 10px;">org-mode</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hexo-org-example/archives/2018/05/">五月 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hexo-org-example/archives/2017/04/">四月 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/hexo-org-example/archives/2017/03/">三月 2017</a><span class="sidebar-module-list-count">2</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/hexo-org-example/2018/05/22/use-org-download-to-drag-image-to-emacs/">Use org-download to drag image to emacs</a>
+        </li>
+      
+        <li>
+          <a href="/hexo-org-example/2017/04/26/tips-for-org-mode-8-user/">Tips for org-mode 8 user</a>
+        </li>
+      
+        <li>
+          <a href="/hexo-org-example/2017/03/05/getting-started-with-hexo-and-org-mode/">Getting Started with the Hexo and org-mode</a>
+        </li>
+      
+        <li>
+          <a href="/hexo-org-example/2017/03/05/hello-world/">Hello World</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Yen-Chin, Lee<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/hexo-org-example/js/script.js"></script>
+
+</body>
+</html>
